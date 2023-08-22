@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# installs
-chmod +x installs_setup.sh
-source installs_setup.sh
-# utilities
-chmod +x utilities_setup.sh
-source utilities_setup.sh
-# ssh key
-chmod +x ssh_keys_setup.sh
-source ssh_keys_setup.sh
+BASE_PATH="$HOME/arch-scripts/setup"
 
+# Installations
+chmod +x "$BASE_PATH/installs_setup.sh"
+source "$BASE_PATH/installs_setup.sh"
+
+# Utilities
+chmod +x "$BASE_PATH/utilities_setup.sh"
+source "$BASE_PATH/utilities_setup.sh"
+
+# SSH key setup
+chmod +x "$BASE_PATH/ssh_keys_setup.sh"
+source "$BASE_PATH/ssh_keys_setup.sh"
