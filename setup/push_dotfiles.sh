@@ -14,7 +14,7 @@ fi
 /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add -u
 
 # Add changes within submodules
-/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME submodule foreach 'git add . && git commit -m "Updating submodule bot"'
+/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME submodule foreach 'git checkout master && git add . &&  git commit -m "Updating submodule bot && git push origin master"'
 
 
 # Commit changes, including submodule references
