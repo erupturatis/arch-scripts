@@ -12,11 +12,12 @@ fi
 
 # Add changes to tracked files only
 /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add -u
-/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add 'arch-scripts'
 
 # Add changes within submodules
 /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME submodule foreach 'git checkout master && git add . &&  git commit -m "Updating submodule bot" && git push origin master'
 
+# add the submodules themselves
+/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add arch-scripts
 
 # Commit changes, including submodule references
 commit_message="Updating dotfiles on $(date)"
