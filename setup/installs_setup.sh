@@ -2,8 +2,9 @@
 
 # Check and install basic packages
 for package in xclip neovim vim discord jetbrains-toolbox brave-bin; do
-  if ! pacman -Qq $package > /dev/null 2>&1; then
-    sudo pacman -S $package
+  if ! yay -Qq $package > /dev/null 2>&1; then
+     
+     yay -S $package 
   fi
 done
 
@@ -20,8 +21,8 @@ fi
 # Install dependencies for pyenv
 deps="base-devel openssl zlib xz libffi sqlite tk git"
 for package in $deps; do
-  if ! pacman -Qq $package > /dev/null 2>&1; then
-    sudo pacman -S $package
+  if ! yay -Qq $package > /dev/null 2>&1; then
+     yay -S $package
   fi
 done
 
@@ -48,8 +49,8 @@ fi
 # Bluetooth setup
 bluetooth_packages="bluez bluez-utils blueman"
 for package in $bluetooth_packages; do
-  if ! pacman -Qq $package > /dev/null 2>&1; then
-    sudo pacman -S $package
+  if ! yay -Qq $package > /dev/null 2>&1; then
+     yay -S $package
   fi
 done
 

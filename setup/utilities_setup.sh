@@ -10,4 +10,3 @@ chmod +x $GITC_PATH
 xmodmap -e "clear lock"
 xmodmap -e "keycode 66 = Super_L"
 
-

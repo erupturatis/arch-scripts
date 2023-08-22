@@ -16,10 +16,11 @@ if [ ! -d "$DOTFILES_DIR" ]; then
   /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME submodule update --init --recursive
 else
   # Using the full command instead of the alias to pull changes, including submodules
-  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull --recurse-submodules --force origin master
+  /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull --force --recurse-submodules origin master
 fi
 
 /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME gc
 /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME prune
 
 echo "Dotfiles have been successfully updated."
+

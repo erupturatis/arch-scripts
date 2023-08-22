@@ -1,22 +1,16 @@
 #!/bin/bash
 
-# Initialize bare repository in ~/.dotfiles
-git init --bare ~/.dotfiles
+# Initialize a bare repository for dotfiles
+git init --bare $HOME/.dotfiles
 
-# Set up alias for dotfiles management
-echo 'alias config="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"' >> ~/.bashrc
-source ~/.bashrc
-
-# Configure Git behavior
+# Configure the repository to not show untracked files in status
 git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config status.showUntrackedFiles no
 
-# Clone dotfiles repository
-git clone git@github.com:erupturatis/.dotfiles.git $HOME/.dotfiles
+# Add the remote origin to the repository
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME remote add origin git@github.com:erupturatis/.dotfiles.git
 
-# Checkout dotfiles
-git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout --force
+# Fetch and forcefully reset to the latest changes from the remote repository
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME fetch origin
+git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME reset --hard origin/master
 
-# Initialize and update submodules
-git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME submodule update --init --recursive --force
-
-echo "Dotfiles have been successfully set up and configured."
+echo "Repository setup and updates have been applied."
