@@ -58,6 +58,10 @@ sudo systemctl enable bluetooth
 sudo systemctl start bluetooth
 
 source ~/.bashrc
+
+# maria db setup
+chmod +x ./installs_setups/mariadb_install_setup.sh
+
 echo "Installation complete!"
 
 
