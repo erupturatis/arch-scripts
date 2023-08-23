@@ -61,6 +61,11 @@ source ~/.bashrc
 
 # maria db setup
 chmod +x ./installs_setups/mariadb_install_setup.sh
+source ./installs_setups/mariadb_install_setup.sh
+
+# nvidia drivers
+
+sudo pacman -Syu nvidia
 
 echo "Installation complete!"
 
