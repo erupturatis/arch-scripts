@@ -9,7 +9,7 @@ setsid xcompmgr &
 xmodmap -e "clear lock"
 xmodmap -e "keycode 66 = Super_L"
 
-# other
+# screenshot
 
-echo "SCRIPT RUNNING HERE"
+sxhkd &
 

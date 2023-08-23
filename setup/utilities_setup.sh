@@ -15,3 +15,6 @@ xmodmap -e "keycode 66 = Super_L"
 git config --global user.email "barbulescu.eugeno@gmail.com"
 git config --global user.name "erupturatis"
 
+# autotiling
+
+yay -S autotiling
