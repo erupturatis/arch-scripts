@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check and install basic packages
-for package in xclip neovim vim discord jetbrains-toolbox brave-bin; do
+for package in xclip neovim vim discord jetbrains-toolbox brave-bin npm; do
   if ! yay -Qq $package > /dev/null 2>&1; then
      
      yay -S $package 
