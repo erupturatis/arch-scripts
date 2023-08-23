@@ -60,8 +60,8 @@ sudo systemctl start bluetooth
 source ~/.bashrc
 
 # maria db setup
-chmod +x ./installs_setups/mariadb_install_setup.sh
-source ./installs_setups/mariadb_install_setup.sh
+chmod +x $HOME/arch-scripts/setup/installs_setups/mariadb_install_setup.sh
+$HOME/arch-scripts/setup/installs_setups/mariadb_install_setup.sh
 
 # nvidia drivers
 

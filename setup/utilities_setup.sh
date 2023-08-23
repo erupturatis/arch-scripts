@@ -10,3 +10,8 @@ chmod +x $GITC_PATH
 xmodmap -e "clear lock"
 xmodmap -e "keycode 66 = Super_L"
 
+# setting git account email and username
+
+git config --global user.email "barbulescu.eugeno@gmail.com"
+git config --global user.name "erupturatis"
+
