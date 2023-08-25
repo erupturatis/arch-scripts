@@ -18,3 +18,5 @@ git config --global user.name "erupturatis"
 # autotiling
 
 yay -S autotiling
+sudo ln -sf /usr/bin/vim /usr/bin/editor
+
