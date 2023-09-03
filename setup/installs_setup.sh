@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check and install basic packages
-for package in xclip neovim vim discord jetbrains-toolbox brave-bin npm xcompmgr; do
+for package in xclip neovim vim discord jetbrains-toolbox brave-bin npm xcompmgr autotiling; do
   if ! yay -Qq $package > /dev/null 2>&1; then
      
      yay -S $package 
@@ -60,12 +60,20 @@ sudo systemctl start bluetooth
 source ~/.bashrc
 
 # maria db setup
-chmod +x ./installs_setups/mariadb_install_setup.sh
-source ./installs_setups/mariadb_install_setup.sh
+chmod +x $HOME/arch-scripts/setup/installs_setups/mariadb_install_setup.sh
+$HOME/arch-scripts/setup/installs_setups/mariadb_install_setup.sh
 
 # nvidia drivers
 
 sudo pacman -Syu nvidia
+
+# screenshot + clipboard functionalities
+sudo pacman -S maim xclip sxhkd --noconfirm
+mkdir -p ~/.config/sxhkd
+echo 'super + alt + s' > ~/.config/sxhkd/sxhkdrc
+echo '  maim -s | tee ~/Pictures/screenshot_$(date +\%F-\%T).png | xclip -selection clipboard -t image/png' >> ~/.config/sxhkd/sxhkdrc
+sxhkd &
+
 
 echo "Installation complete!"
 

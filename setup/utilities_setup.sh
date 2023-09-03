@@ -11,3 +11,14 @@ xmodmap -e "clear lock"
 xmodmap -e "keycode 66 = Super_L"
 
 xset -b
+
+# setting git account email and username
+
+git config --global user.email "barbulescu.eugeno@gmail.com"
+git config --global user.name "erupturatis"
+
+# autotiling
+
+yay -S autotiling
+sudo ln -sf /usr/bin/vim /usr/bin/editor
+
