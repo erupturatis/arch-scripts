@@ -13,3 +13,5 @@ xmodmap -e "keycode 66 = Super_L"
 
 sxhkd &
 
+xset -b
+
