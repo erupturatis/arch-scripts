@@ -2,8 +2,12 @@
 echo "Your custom commands here"
 
 # ricing
+
+# console color
+
 wal -R
 setsid xcompmgr &
+
 
 # keybinds setup
 xmodmap -e "clear lock"
